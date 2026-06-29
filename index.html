@@ -1,138 +1,243 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Jaz - Mis XV</title>
-
+    <!-- Fuentes elegantes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        :root {
+            --rosa-pastel: #FFF0F5;
+            --rosa-principal: #F4C2C2;
+            --rosa-oscuro: #E8A7A1;
+            --dorado: #D4AF37;
+            --verde-suave: #E2ECE9;
+            --texto: #4A3B32;
         }
 
-        body{
-            <div class="mariposa mariposa1">🦋</div>
-<div class="mariposa mariposa2">🦋</div>
-<div class="mariposa mariposa3">🦋</div>
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            font-family:'Poppins',sans-serif;
-
-            background:
-            background:
-linear-gradient(rgba(255,245,250,.55), rgba(255,245,250,.55)),
-url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1400&q=80');
-
-            background-size:cover;
-            background-position:center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .portada{
-            background:rgba(255,255,255,.75);
-            padding:60px 40px;
-            border-radius:30px;
-            max-width:700px;
-            backdrop-filter: blur(8px);
-            box-shadow:0 8px 30px rgba(0,0,0,.15);
+        body {
+            background-color: var(--rosa-pastel);
+            font-family: 'Poppins', sans-serif;
+            color: var(--texto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        h2{
-            color:#c9a227;
-            font-size:2rem;
-            letter-spacing:3px;
+        /* Fondo decorativo sutil con verde suave */
+        .background-decor {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, #ffffff 0%, var(--verde-suave) 100%);
+            opacity: 0.5;
         }
 
-        h1{
-            font-family:'Great Vibes',cursive;
-            font-size:7rem;
-            color:#e88ab4;
-            margin:20px 0;
+        .card {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(232, 167, 161, 0.25);
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+            border: 3px double var(--dorado);
+            position: relative;
         }
 
-        p{
-            color:#6b5060;
-            font-size:1.2rem;
-            line-height:1.8;
+        .name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            color: var(--rosa-oscuro);
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
 
-        .fecha{
-            margin-top:30px;
-            color:#c9a227;
-            font-weight:bold;
-            font-size:1.3rem;
+        .xv {
+            font-size: 1.5em;
+            letter-spacing: 5px;
+            color: var(--dorado);
+            font-weight: 600;
+            margin-bottom: 25px;
         }
 
+        .frase {
+            font-style: italic;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            padding: 0 10px;
+            color: #66554B;
+        }
+
+        /* Música */
+        .music-container {
+            margin-bottom: 30px;
+            background: #FFF5F6;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px dashed var(--rosa-principal);
+        }
+        .btn-music {
+            background-color: var(--rosa-principal);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid var(--dorado);
+        }
+        .btn-music:hover { background-color: var(--rosa-oscuro); }
+
+        /* Cuenta regresiva */
+        .countdown-title {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--dorado);
+            margin-bottom: 10px;
+        }
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 35px;
+            background: var(--rosa-pastel);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .countdown-number {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: var(--rosa-oscuro);
+        }
+        .countdown-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            color: #88776B;
+        }
+
+        /* Detalles del evento */
+        .info-section {
+            border-top: 1px solid var(--rosa-principal);
+            border-bottom: 1px solid var(--rosa-principal);
+            padding: 25px 0;
+            margin-bottom: 30px;
+            font-size: 1em;
+            line-height: 1.8;
+        }
+        .info-section strong {
+            color: var(--dorado);
+        }
+
+        /* Botones de acción */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #25D366; /* Verde WhatsApp */
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--texto);
+            border: 1px solid var(--dorado);
+        }
+        .btn-secondary:hover { background-color: var(--rosa-pastel); transform: translateY(-1px); }
+
+        .no-faltes {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            color: var(--rosa-oscuro);
+            margin-top: 25px;
+        }
+
+        /* Mariposas flotantes animadas */
+        .butterfly {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.7;
+            animation: float 5s ease-in-out infinite;
+        }
+        .b1 { top: 20px; left: -15px; animation-delay: 0s; color: var(--dorado); }
+        .b2 { top: 80px; right: -15px; animation-delay: 1.5s; color: var(--rosa-oscuro); }
+        .b3 { bottom: 150px; left: -20px; animation-delay: 3s; color: var(--rosa-oscuro); }
+        .b4 { bottom: 30px; right: -15px; animation-delay: 0.8s; color: var(--dorado); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+            50% { transform: translateY(-15px) scale(1.1) rotate(10deg); }
+        }
     </style>
-    .mariposa{
-    position:absolute;
-    font-size:50px;
-    animation: flotar 5s ease-in-out infinite;
-}
-
-.mariposa1{
-    top:10%;
-    left:10%;
-}
-
-.mariposa2{
-    top:20%;
-    right:10%;
-    animation-delay:2s;
-}
-
-.mariposa3{
-    bottom:15%;
-    left:15%;
-    animation-delay:4s;
-}
-
-@keyframes flotar{
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-20px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-}
-
 </head>
-
 <body>
 
-    <div class="portada">
+    <div class="background-decor"></div>
 
-        <h2>Mis XV</h2>
+    <div class="card">
+        <!-- Mariposas decorativas a los lados -->
+        <div class="butterfly b1">🦋</div>
+        <div class="butterfly b2">🦋</div>
+        <div class="butterfly b3">🦋</div>
+        <div class="butterfly b4">🦋</div>
 
-        <h1>Jaz</h1>
+        <!-- Encabezado -->
+        <div class="name">Jaz</div>
+        <div class="xv">MIS XV</div>
 
-        <p>
-            Dicen que los sueños más hermosos se viven con las personas que más queremos.
-            Hoy comienza un capítulo inolvidable de mi historia, y sería un honor que formes parte de esta noche mágica que guardaré por siempre en mi corazón. ✨
+        <!-- Frase Especial -->
+        <p class="frase">
+            "Dicen que los sueños más hermosos se viven con las personas que más queremos. Hoy comienza un capítulo inolvidable de mi historia, y sería un honor que formes parte de esta noche mágica que guardaré por siempre en mi corazón.✨"
         </p>
 
-        <div class="fecha">
-            12 de septiembre de 2026 - 21:00 hs
+        <!-- Música: Baila Princesita -->
+        <div class="music-container">
+            <p style="font-size: 0.85em; margin-bottom: 8px; color: #77665B;">🎵 Música de fondo:</p>
+            <!-- Audio oculto (Usa una pista libre de ejemplo; puedes cambiar el link por otro si lo deseas) -->
+            <audio id="audio-cumple" loop>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            </audio>
+            <button class="btn-music" id="btn-play" onclick="toggleMusic()">▶️ Escuchar "Baila Princesita"</button>
         </div>
 
-    </div>
+        <!-- Cuenta Regresiva -->
+        <div class="countdown-title">⏳ Tiempo restante</div>
+        <div class="countdown">
+            <div class="countdown-item"><span class="countdown-number" id="days">00</span><span class="countdown-label">Días</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Hs</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="mins">00</span><span class="countdown-label">Min</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="secs">00Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
 
-</body>
-</html>
+```
