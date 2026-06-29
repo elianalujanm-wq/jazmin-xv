@@ -21,6 +21,9 @@
         }
 
         body{
+            <div class="mariposa mariposa1">🦋</div>
+<div class="mariposa mariposa2">🦋</div>
+<div class="mariposa mariposa3">🦋</div>
             height:100vh;
             display:flex;
             justify-content:center;
@@ -29,8 +32,9 @@
             font-family:'Poppins',sans-serif;
 
             background:
-            linear-gradient(rgba(255,240,245,.4),rgba(255,240,245,.4)),
-            url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1400&q=80');
+            background:
+linear-gradient(rgba(255,245,250,.55), rgba(255,245,250,.55)),
+url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1400&q=80');
 
             background-size:cover;
             background-position:center;
@@ -72,6 +76,42 @@
         }
 
     </style>
+    .mariposa{
+    position:absolute;
+    font-size:50px;
+    animation: flotar 5s ease-in-out infinite;
+}
+
+.mariposa1{
+    top:10%;
+    left:10%;
+}
+
+.mariposa2{
+    top:20%;
+    right:10%;
+    animation-delay:2s;
+}
+
+.mariposa3{
+    bottom:15%;
+    left:15%;
+    animation-delay:4s;
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
 
 </head>
 
